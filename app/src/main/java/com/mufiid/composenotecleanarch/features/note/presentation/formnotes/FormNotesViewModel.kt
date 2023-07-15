@@ -22,7 +22,7 @@ class FormNotesViewModel @Inject constructor(
 ) : ViewModel() {
 
     companion object {
-        const val ARG_NOTE_ID = "ARG_NOTE_ID"
+        const val ARG_NOTE_ID = "noteId"
     }
 
     init {
@@ -106,7 +106,7 @@ class FormNotesViewModel @Inject constructor(
                             isHintVisible = false
                         )
                         _noteContent.value = noteContent.value.copy(
-                            text = note.title,
+                            text = note.content,
                             isHintVisible = false
                         )
                         _noteColor.value = note.color
