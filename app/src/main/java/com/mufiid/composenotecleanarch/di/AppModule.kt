@@ -5,10 +5,7 @@ import com.mufiid.composenotecleanarch.features.note.data.repository.NoteReposit
 import com.mufiid.composenotecleanarch.features.note.data.source.DatabaseBuilder
 import com.mufiid.composenotecleanarch.features.note.data.source.NoteDatabase
 import com.mufiid.composenotecleanarch.features.note.domain.repository.NoteRepository
-import com.mufiid.composenotecleanarch.features.note.domain.usecase.AddNote
-import com.mufiid.composenotecleanarch.features.note.domain.usecase.DeleteNote
-import com.mufiid.composenotecleanarch.features.note.domain.usecase.GetNotes
-import com.mufiid.composenotecleanarch.features.note.domain.usecase.NotesUseCases
+import com.mufiid.composenotecleanarch.features.note.domain.usecase.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -37,7 +34,8 @@ object AppModule {
         return NotesUseCases(
             getNotes = GetNotes(repository),
             deleteNote = DeleteNote(repository),
-            addNote = AddNote(repository)
+            addNote = AddNote(repository),
+            getNote = GetNote(repository)
         )
     }
 }
